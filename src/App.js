@@ -5,6 +5,10 @@ import Home from "./components/Home";
 import CategoryApp from './components/Category';
 import CartPage from "./components/CartPage";
 import { useState } from "react";
+import Login from "./components/Login";
+import './App.scss';
+import MypageMobile from "./pages/MypageMobile";
+import MypageTD from "./pages/MypageTD";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -29,20 +33,9 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout onCategorySelect={handleCategorySelect} selectedCategory={selectedCategory}/>}>
-          <Route path="/" element={<Home onAddCart={handleAddCart} />} />
-          <Route path="/category/:cat" element={<CategoryApp selectedCategory={selectedCategory}/>} />
-          <Route
-            path="/cart"
-            element={<CartPage cart={cart}
-            onCategorySelect={handleCategorySelect}
-            />}
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      
+    </div>
   );
 };
 
