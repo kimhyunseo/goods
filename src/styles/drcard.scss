@@ -26,6 +26,7 @@
   }
   .bottom {
     width: 100%;
+    @include flex-layout(column);
     li {
       width: 100%;
       border-top: 1px solid var(--color-gray);

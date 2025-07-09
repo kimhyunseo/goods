@@ -17,7 +17,7 @@
 
     .empty-cart{
       @include flex-layout(column);
-      height: 300px;
+      height: 500px;
       gap: 0.5rem;
       .basket-icon{
         font-size: 5rem;
@@ -68,7 +68,7 @@
       border-radius: 12px;
       padding: 1rem;
       margin-bottom: 1rem;
-      background: #fff;
+      background: var(--color-white);
 
       input[type="checkbox"] {
         margin-right: 1rem;
@@ -80,7 +80,7 @@
       .item-thumbnail {
         width: 100px;
         height: 100px;
-        background-color: #ccc;
+        background-color: var(--color-white);
         border-radius: 0.5rem;
         margin-right: 1rem;
       }
@@ -137,7 +137,7 @@
   .cart-summary {
     width: 100%;
     padding: 1.5rem;
-    background: var(--color-gray);
+    background: var(--color-sub);
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -146,8 +146,11 @@
       @include large-font;
       margin-bottom: 1rem;
     }
-
+    ul{
+      @include flex-layout(column, space-between, flex-start);
+    }
     ul li {
+      width: 100%;
       @include flex-layout(row, space-between, flex-start);
       @include base-font;
       margin-bottom: 1rem;

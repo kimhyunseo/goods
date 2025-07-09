@@ -1,16 +1,14 @@
 import "./App.scss";
-import Footer from "./MainPage/Footer";
-import Review from "./MainPage/Review";
-import "./App.scss";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainLayout from './components/MainLayout';
 import Home from "./components/Home";
-import Category from './components/Category'; // 상대 경로 기준
+import CategoryApp from './components/Category';
 import CartPage from "./components/CartPage";
 import { useState } from "react";
 
 const App = () => {
   const [cart, setCart] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   // 장바구니에 아이템 추가
   const handleAddCart = (item) => {
@@ -25,15 +23,22 @@ const App = () => {
       }
     });
   };
+
+    const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainLayout />}>
+        <Route path="/" element={<MainLayout onCategorySelect={handleCategorySelect} selectedCategory={selectedCategory}/>}>
           <Route path="/" element={<Home onAddCart={handleAddCart} />} />
-          <Route path="/cartegory" />
+          <Route path="/category/:cat" element={<CategoryApp selectedCategory={selectedCategory}/>} />
           <Route
             path="/cart"
-            element={<CartPage cart={cart}/>}
+            element={<CartPage cart={cart}
+            onCategorySelect={handleCategorySelect}
+            />}
           />
         </Route>
       </Routes>

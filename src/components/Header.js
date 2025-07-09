@@ -6,8 +6,17 @@ import { IoSearchOutline } from "react-icons/io5";
 
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ onCategorySelect }) => {
   const navigate = useNavigate();
+  const categoryList = ["all", "best", "keyring", "sticker", "living", "card", "Memo", "Note"];
+  
+ const handleCategoryClick = (cat) => {
+    if (onCategorySelect) {
+      onCategorySelect(cat); // 선택 상태 전달 (선택사항)
+    }
+    navigate(`/category/${cat}`); // 카테고리 페이지 이동
+  };
+
   return (
     <div id="header">
       <div>
@@ -40,15 +49,12 @@ const Header = () => {
       </div>
       <nav className="menubar">
         <ul>
-          <li>ALL</li>
-          <li>best</li>
-          <li>kering</li>
-          <li>sticker</li>
-          <li>living</li>
-          <li>card</li>
-          <li>memo</li>
-          <li>note</li>
-        </ul>
+        {categoryList.map((cat) => (
+          <li key={cat} onClick={() => handleCategoryClick(cat)}>
+            {cat.toUpperCase()}
+          </li>
+        ))}
+      </ul>
       </nav>
     </div>
   );

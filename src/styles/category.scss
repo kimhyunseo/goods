@@ -2,70 +2,29 @@
 
 // --- 전역/기본 스타일 (CategoryApp 컴포넌트에 포함될 수 있는 부분) ---
 .category-app__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 32px;
-
-    @media (max-width: 1024px) {
-        padding: 20px;
-    }
-    @media (max-width: 600px) {
-        padding: 16px;
-    }
-}
-
-// --- 카테고리 네비게이션 ---
-.category-nav {
-    margin-bottom: 24px;
-    text-align: center;
-
-    &__list {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        padding: 0;
-        margin: 0 auto;
-        max-width: fit-content;
-    }
-
-    &__button {
-        background: none;
-        border: none;
-        padding: 8px 16px;
-        @include base-font;
-        cursor: pointer;
-        color: $color-gray;
-        border-radius: 4px;
-        transition: background-color 0.3s ease, border-color 0.3s ease,
-            color 0.3s ease;
-
-        &.active {
-            border:none;
-            color: $color-primary;
-            cursor: default;
-        }
-
-        &.inactive:hover {
-            border:none;
-            color: $color-primary;
-        }
+    width: 90%;
+    margin: 3rem auto;
+    margin-bottom: 5rem;
+    h2{
+        @include large-font;
+        margin: 1rem 0;
+        text-align: center;
+        color: var(--color-primary);
     }
 }
+
 
 // --- 상품 목록 그리드 ---
 .product-list__grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    @media (max-width: 1024px) {
+    @include tablet {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    @media (max-width: 600px) {
-        grid-template-columns: repeat(2, 1fr);
+    @include desktop {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
@@ -105,12 +64,12 @@
         position: absolute;
         bottom: 8px;
         right: 8px;
-        color: $color-primary;
+        color: var(--color-primary);
         font-size: 24px;
         transition: color 0.3s ease;
 
         &:hover {
-            color: $color-font;
+            color: var(--color-black);
         }
     }
 
@@ -157,13 +116,13 @@
         font-size: 14px;
         cursor: pointer;
         border-radius: 4px;
-        color: $color-dark-gray;
+        color: var(--color-gray);
         transition: background-color 0.3s ease, color 0.3s ease,
             border-color 0.3s ease;
 
         &.active {
           border:none;
-            color: $color-button;
+            color: var(--color-primary);
             cursor: default;
         }
 

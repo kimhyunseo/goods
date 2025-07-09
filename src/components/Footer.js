@@ -30,7 +30,7 @@ const Footer = () => {
             </li>
             </ul>
             <div className="foot-text">
-                <img src="../images/logo1.png"/>
+                <img src="../images/logo1-1.png"/>
                 <p>ⓒ 2025 [Ririm].<br/>
                 All rights reserved.</p>
             </div>

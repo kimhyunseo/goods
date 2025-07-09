@@ -2,9 +2,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsBasket } from "react-icons/bs";
 
-const CartPage = ({ cart }) => {
+const CartPage = ({ cart,onCategorySelect }) => {
   const [items, setItems] = useState(cart);
   const navigate = useNavigate();
+  const handleGoToBest = () => {
+    if (onCategorySelect) {
+      onCategorySelect("best");  // selectedCategory 상태 변경
+    }
+    navigate("/category/best");   // best 카테고리 페이지로 이동
+  };
 
   const allChecked = items.length > 0 && items.every((item) => item.checked);
 
@@ -62,7 +68,7 @@ const CartPage = ({ cart }) => {
             <BsBasket className="basket-icon"/>
             <h3>장바구니가 비어있어요</h3>
             <p>새로운 상품으로 채워주세요</p>
-            <button onClick={()=>{navigate('/')}}>인기 상품 보러가기</button>
+            <button onClick={handleGoToBest}>인기 상품 보러가기</button>
           </div>
         ) : (
           <div className="cart-list">

@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
-const MainLayout = () => {
+const MainLayout = ({ onCategorySelect }) => {
     return (
         <div className="main-wrap">
-            <Header/>
+            <Header onCategorySelect={onCategorySelect}/>
             <Outlet />
+            <Footer/>
         </div>
     );
 };
