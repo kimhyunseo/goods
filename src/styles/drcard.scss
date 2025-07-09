@@ -1,3 +1,5 @@
+
+
 .drcard {
   width: 100%;
   .main-title {
@@ -30,6 +32,9 @@
       border-bottom: 1px solid var(--color-gray);
       padding: 10px 0;
       @include flex-layout(row, space-between);
+      &:last-child{
+      border-top:none;
+    }
     }
     .sub-img {
       background-color: var(--color-gray);

@@ -34,7 +34,7 @@ const Header = () => {
             <FiUser />
           </li>
           <li>
-            <IoCartOutline />
+            <IoCartOutline onClick={()=>{navigate('/cart')}} />
           </li>
         </ul>
       </div>
