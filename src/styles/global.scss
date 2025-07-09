@@ -3,6 +3,7 @@
     --color-primary:#6495ED;
     --color-sub:#DCEEF2;
     --color-btn:#3759B4;
+    --color-btn:#3759B4;
     --color-gray:#C2C8D2;
     --color-black:#222222;
     --color-dark:#666666;
@@ -13,4 +14,7 @@
 a{text-decoration: none; display: block; color: inherit;}
 li{list-style: none;}
 button{cursor: pointer; border: none;}
-html{font-size: 16px;}
+html{
+    font-size: 16px;
+    color: var(--color-black);
+}

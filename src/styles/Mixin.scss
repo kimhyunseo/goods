@@ -29,6 +29,12 @@ $color-white: #F6F9FF;
     font-size: 0.6rem;
     font-weight: 400;
 }
+@mixin flex-layout($direction:row, $justify:center, $align:center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
 
 //반응형 믹스인
 @mixin tablet{

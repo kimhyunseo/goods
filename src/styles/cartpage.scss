@@ -1,0 +1,233 @@
+.cart-wrap {
+  display: flex;
+  flex-direction: column; // 기본 모바일
+  gap: 2rem;
+  padding: 1rem;
+  @include base-font;
+
+  .title{
+    h2{
+      text-align: center;
+      @include large-font;
+    }
+  }
+
+  .cart-left {
+    width: 100%;
+
+    .empty-cart{
+      @include flex-layout(column);
+      height: 500px;
+      gap: 0.5rem;
+      .basket-icon{
+        font-size: 5rem;
+        color: var(--color-gray);
+        margin-bottom: 2rem;
+      }
+      button{
+        padding: 1rem 2rem;
+        background-color: var(--color-btn);
+        color: var(--color-sub);
+        @include bold-font;
+        border: none;
+        border-radius: 0.5rem;
+      }
+    }
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      label {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+
+        input[type="checkbox"] {
+          margin-right: 8px;
+          width: 18px;
+          height: 18px;
+          accent-color: var(--color-primary);
+        }
+      }
+
+      button {
+        border: none;
+        background: none;
+        color: var(--color-gray);
+        cursor: pointer;
+        @include bold-font;
+      }
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--color-gray);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: var(--color-white);
+
+      input[type="checkbox"] {
+        margin-right: 1rem;
+        width: 18px;
+        height: 18px;
+        accent-color: var(--color-primary);
+      }
+
+      .item-thumbnail {
+        width: 100px;
+        height: 100px;
+        background-color: var(--color-white);
+        border-radius: 0.5rem;
+        margin-right: 1rem;
+      }
+
+      .item-info {
+        flex: 1;
+
+        .brand {
+          font-size: 0.75rem;
+          color: var(--color-gray);
+          margin-bottom: 2px;
+        }
+
+        .name {
+          font-weight: 600;
+          margin-bottom: 2px;
+        }
+
+        .option {
+          @include base-font;
+          color: var(--color-black);
+        }
+
+        .quantity {
+          display: flex;
+          align-items: center;
+          margin-top: 0.5rem;
+
+          button {
+            width: 25px;
+            height: 25px;
+            @include base-font;
+            border: none;
+            border-radius: 50%;
+            background: var(--color-gray);
+            cursor: pointer;
+          }
+
+          span {
+            margin: 0 12px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .price {
+        white-space: nowrap;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .cart-summary {
+    width: 100%;
+    padding: 1.5rem;
+    background: var(--color-sub);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      @include large-font;
+      margin-bottom: 1rem;
+    }
+    ul{
+      @include flex-layout(column, space-between, flex-start);
+    }
+    ul li {
+      width: 100%;
+      @include flex-layout(row, space-between, flex-start);
+      @include base-font;
+      margin-bottom: 1rem;
+
+      span:last-child {
+        align-self: flex-end;
+        font-weight: 800;
+      }
+
+      .delivery {
+        p {
+          @include small-font;
+          color: var(--color-btn);
+          font-weight: 800;
+        }
+
+        .delivery-fee {
+          @include base-font;
+        }
+      }
+    }
+
+    .total {
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      @include flex-layout(row, space-between);
+
+      h5 {
+        display: block;
+        font-size: 1.5rem;
+        margin-top: 4px;
+      }
+    }
+
+    .order-btn {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      font-size: 1rem;
+      background-color: var(--color-btn);
+      color: var(--color-sub);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  // 📱 태블릿 (768 ~ 1439px)
+  @include tablet {
+    flex-direction: row;
+    align-items: flex-start;
+
+    .cart-left {
+      flex: 1;
+    }
+
+    .cart-summary {
+      width: 280px;
+      margin-left: 1rem;
+      position: sticky;
+      top: 2rem;
+    }
+  }
+
+  // 💻 데스크탑 (1440px 이상)
+  @include desktop {
+    padding: 2rem 3rem;
+
+    .cart-summary {
+      width: 320px;
+      position: sticky;
+      top: 2rem;
+    }
+  }
+}
