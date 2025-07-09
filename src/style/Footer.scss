@@ -1,0 +1,89 @@
+@import "./global.scss";
+
+
+footer {
+    padding: 2rem 2.5rem;
+    background-color: var(--color-white);
+}
+
+.top-text {
+    @include flex-layout(row, space-around, center);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    @include base-font;
+}
+.top-text>p>a:hover{
+    @include bold-font;
+    transition: all 0.3s;
+    border-bottom: 1px solid #222;
+}
+
+.icon {
+    @include flex-layout(row, center, center);
+    @include large-font;
+    gap: 3rem;
+    margin-bottom: 2rem;
+
+    p {
+        background-color: var(--color-gray);
+        color: #fff;
+        padding: 0.6rem 1rem;
+        border-radius: 50%;
+        text-align: center;
+    }
+}
+
+ul {
+    @include tablet{
+    @include flex-layout(row,space-between,center);
+    display: flex;
+    }
+}
+
+.middle-text {
+    @include base-font;
+    color: var(--color-dark);
+
+    h2 {
+        color: var(--color-black);
+        @include large-font;
+        margin: 1rem 0;
+    }
+
+    @include tablet {
+        .middle-text {
+            @include large-font;
+
+            h2 {
+                @include bold-font;
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+.bottom-text {
+    margin-top: 2rem;
+
+    >p {
+        @include base-font;
+        margin: 1rem 0;
+        color: var(--color-dark);
+    }
+
+    @include tablet {
+        align-items: flex-end;
+
+    }
+}
+
+.foot-text {
+    @include flex-layout(row, center, center);
+    @include base-font;
+
+    img {
+        margin: 1rem 2rem;
+        width: 152px;
+        height: 80px;
+    }
+}
