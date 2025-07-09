@@ -14,25 +14,21 @@ $color-white: #F6F9FF;
     font-size: 2rem;
     font-weight: 700;
 }
-
 @mixin base-font{
     font-family: "Gowun Batang", sans-serif;
     font-size: 1rem;
     font-weight: 400;
 }
-
 @mixin bold-font{
     font-family: "Gowun Batang", sans-serif;
     font-size: 1rem;
     font-weight: 700;
 }
-
 @mixin small-font{
     font-family: "Gowun Batang", sans-serif;
     font-size: 0.6rem;
     font-weight: 400;
 }
-
 @mixin flex-layout($direction:row, $justify:center, $align:center){
     display: flex;
     flex-direction: $direction;
@@ -41,13 +37,11 @@ $color-white: #F6F9FF;
 }
 
 //반응형 믹스인
-
 @mixin tablet{
     @media screen and (min-width:768px) {
         @content;
     }
 }
-
 @mixin desktop{
     @media screen and (min-width: 1440px){
         @content;
