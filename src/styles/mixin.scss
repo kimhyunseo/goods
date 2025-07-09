@@ -1,25 +1,32 @@
-@mixin font-title{
-    font-family: "Outfit", sans-serif;
+@mixin large-font{
+    font-family: "Gowun Batang", sans-serif;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-@mixin font-sub{
-    font-family: "Outfit", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-@mixin font-btn{
-    font-family: "Outfit", sans-serif;
+@mixin base-font{
+    font-family: "Gowun Batang", sans-serif;
     font-size: 1rem;
     font-weight: 400;
 }
 
-@mixin font-body{
-    font-family: "Noto Sans KR", sans-serif;
+@mixin bold-font{
+    font-family: "Gowun Batang", sans-serif;
     font-size: 1rem;
+    font-weight: 700;
+}
+
+@mixin small-font{
+    font-family: "Gowun Batang", sans-serif;
+    font-size: 0.6rem;
     font-weight: 400;
+}
+
+@mixin flex-layout($direction:row, $justify:center, $align:center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
 }
 
 //반응형 믹스인
