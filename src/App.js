@@ -9,7 +9,8 @@ import Home from "./components/Home";
 const App = () => {
   return (
     <div>
-      
+      <Review/>
+      <Footer/>
     </div>
   );
 };
