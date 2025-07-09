@@ -12,6 +12,11 @@ footer {
     margin-bottom: 2rem;
     @include base-font;
 }
+.top-text>p>a:hover{
+    @include bold-font;
+    transition: all 0.3s;
+    border-bottom: 1px solid #222;
+}
 
 .icon {
     @include flex-layout(row, center, center);
