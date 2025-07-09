@@ -1,3 +1,13 @@
+@import './styles/font.scss';
+@import './styles/mixin.scss';
+@import './styles/global.scss';
+
+//컴포넌트별 scss
+
+@import './styles/header.scss';
+@import './styles/banner.scss';
+@import './styles/dailyrecord.scss';
+@import './styles/drcard.scss';
 @import "./style/Mixin.scss";
 @import "./style/Review.scss";
 @import "./style/font.scss";
