@@ -1,3 +1,14 @@
+// Color styles
+$color-primary: #6495ED;
+$color-sub: #DCEEF2;
+$color-button: #191970;
+$color-font: #222222;
+$color-card: #CCCCCC;
+$color-gray: #C2C8D2;
+$color-dark-gray: #666666;
+$color-white: #F6F9FF;
+
+
 @mixin large-font{
     font-family: "Gowun Batang", sans-serif;
     font-size: 2rem;
