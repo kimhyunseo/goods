@@ -2,7 +2,7 @@
 :root{
     --color-primary:#6495ED;
     --color-sub:#DCEEF2;
-    --color-btn:#191970;
+    --color-btn:#3759B4;
     --color-gray:#C2C8D2;
     --color-black:#222222;
     --color-dark:#666666;
@@ -12,5 +12,5 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 a{text-decoration: none; display: block; color: inherit;}
 li{list-style: none;}
-button{cursor: pointer;}
+button{cursor: pointer; border: none;}
 html{font-size: 16px;}
