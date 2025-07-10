@@ -95,14 +95,12 @@ const App = () => {
               <WishList likedItems={likedItems} toggleLike={toggleLike} />
             }
           />
+          <Route path="/product/:id" element={<ItemPage />}/>
           <Route path="/search" element={<SearchPage likedItems={likedItems}
                 toggleLike={toggleLike} onCategorySelect={handleCategorySelect}/>} />
         </Route>
       </Routes>
     </BrowserRouter>
-    <div>
-      <ItemPage />
-    </div>
   );
 };
 
