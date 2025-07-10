@@ -36,6 +36,7 @@
         "setID": "mid02",
         "setTitle": "산리오 인기 캐릭터 컬렉션",
         "setSubtitle": "마이멜로디부터 쿠로미까지 한눈에!",
+        "brand": "Sanrio",
         "setimage": "/images/keyring-31.jpg",
         "products": [
             {
@@ -68,6 +69,7 @@
         "setID": "mid03",
         "setTitle": "POP MART 스페셜 키링",
         "setSubtitle": "개성 있는 캐릭터를 담은 POP MART 키링 모음",
+         "brand": "POP MART",
         "setimage": "/images/keyring-12.jpg",
         "products": [
             {
@@ -89,7 +91,7 @@
                 "price": 149000
             },
             {
-                "image": "/images/living-16",
+                "image": "/images/living-16.jpg",
                 "brand": "POP MART",
                 "name": "팝마트 라부부 더 몬스터즈 x 원피스 시리즈 피규어 몽키 D.루피",
                 "price": 40000

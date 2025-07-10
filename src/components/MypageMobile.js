@@ -5,7 +5,6 @@ import { BsCoin } from "react-icons/bs";
 const MypageMobile = () => {
     return (
         <div className="mypagemobile-wrap">
-            <img src="./images/logo1.png" alt="로고 이미지" />
             <div className="member-wrap">
                 <h6>___님은 [FAMILY] 회원이십니다.</h6>
                 <button className="benefit-btn">등급별 혜택 보기</button>

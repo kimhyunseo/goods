@@ -11,6 +11,9 @@
         p{
             @include base-font;
             color: var(--color-gray);
+             &:hover {
+        color: $color-primary;
+      }
         }
     }
     .daily-wrap{

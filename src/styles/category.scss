@@ -31,7 +31,7 @@
 // --- 상품 카드 스타일 ---
 .product-card {
     background: #fff;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     display: flex;
@@ -65,8 +65,11 @@
         bottom: 8px;
         right: 8px;
         color: var(--color-primary);
-        font-size: 24px;
+        font-size: 35px;
         transition: color 0.3s ease;
+        background-color: var(--color-white);
+        border-radius: 50%;
+        padding: 5px;
 
         &:hover {
             color: var(--color-black);

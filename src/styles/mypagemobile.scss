@@ -1,6 +1,4 @@
 .mypagemobile-wrap{
-    height: 100vh;
-    margin: 2rem 1rem;
     @include flex-layout(column, center, center);
     
     img{

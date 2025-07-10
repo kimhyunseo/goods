@@ -8,12 +8,6 @@ const MypageTD = () => {
                     <div className="greet">
                         <h4>반가워요 ___님!</h4>
                     </div>
-                    <div className="logo-img">
-                        <img src="./images/logo1.png" alt="로고" />
-                    </div>
-                    <div className="cart-icon">
-                        <IoCartOutline />
-                    </div>
                 </header>
 
                 <div className="member-container">
