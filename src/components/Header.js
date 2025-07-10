@@ -73,6 +73,7 @@ const Header = ({ onCategorySelect, isLoggedIn }) => {
           </li>
         </ul>
           <ul>
+            <li  onClick={() => {navigate("/"); setIsMenuOpen(false);}}>HOME</li>
             {categoryList.map((cat) => (
               <li
                 key={cat}

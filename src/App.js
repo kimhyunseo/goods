@@ -11,6 +11,7 @@ import MypageMobile from "./components/MypageMobile";
 import useWindowSize from "./hooks/useWindowSize";
 import WishList from "./components/WishList";
 import SearchPage from "./components/SearchPage";
+import ItemPage from "./components/ItemPage";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -94,6 +95,7 @@ const App = () => {
               <WishList likedItems={likedItems} toggleLike={toggleLike} />
             }
           />
+          <Route path="/product/:id" element={<ItemPage onAddCart={handleAddCart}/>}/>
           <Route path="/search" element={<SearchPage likedItems={likedItems}
                 toggleLike={toggleLike} onCategorySelect={handleCategorySelect}/>} />
         </Route>

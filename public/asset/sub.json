@@ -157,7 +157,8 @@
     "subtitle": "GD 팬이라면 탐나는 아이템!",
     "isBest": true,
     "brand": "PEACEMINUSONE",
-    "category": "keyring"
+    "category": "keyring",
+    "detail": "/images/gdkeyring-all.jpg"
   },
   {
     "id": 17,
@@ -637,7 +638,8 @@
     "subtitle": "보기만해도 소장욕구가 생기는!",
     "isBest": true,
     "brand": "빵빵이의 일상",
-    "category": "living"
+    "category": "living",
+    "detail": "/images/detail-living.jpg"
   },
   {
     "id": 65,

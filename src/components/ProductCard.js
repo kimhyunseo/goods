@@ -1,12 +1,22 @@
 import { MdOutlineBookmarkBorder, MdBookmark } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product, liked, onToggleLike }) => {
+  const navigate = useNavigate();
+
   const handleImageError = (e) => {
     e.target.onerror = null;
   };
+
+  const handleClick = () => {
+  if (product.detail) {
+    navigate(`/product/${product.id}`);
+  }
+};
+
   return (
     <div className="product-card group">
-      <div className="product-card__image-wrapper">
+      <div className="product-card__image-wrapper" onClick={handleClick}>
         <img
           src={product.image}
           alt={product.name}
