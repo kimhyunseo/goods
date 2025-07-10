@@ -1,17 +1,13 @@
 .banner-wrapper {
   position: relative;
-  width: 100%;
-  height: 70vh;
-  min-height: 500px;
+  height: 687px;
   margin: 0 auto;
-  .slick-slide div {
+  .slick-slide img {
+    height: 687px;
     display: flex;
+    object-fit: cover;
     align-items: center;
     justify-content: center;
-    height: 70vh;
-  min-height: 500px;
-    font-size: 1.25rem;
-    background-color: var(--color-primary);
   }
 }
 

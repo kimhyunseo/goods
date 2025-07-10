@@ -1,16 +1,17 @@
-@import "./global.scss";
-
-
 footer {
-    padding: 2rem 2.5rem;
+    padding: 1rem 2.5rem;
     background-color: var(--color-white);
 }
 
 .top-text {
     @include flex-layout(row, space-around, center);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
     @include base-font;
+    margin-bottom: 0.5rem;
+    p{
+        &:nth-of-type(2){
+            @include bold-font;
+        }
+    }
 }
 .top-text>p>a:hover{
     @include bold-font;
@@ -20,16 +21,19 @@ footer {
 
 .icon {
     @include flex-layout(row, center, center);
-    @include large-font;
-    gap: 3rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
 
     p {
         background-color: var(--color-gray);
+        @include flex-layout();
         color: #fff;
-        padding: 0.6rem 1rem;
+        padding: 0.5rem;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
     }
 }
 
@@ -47,7 +51,6 @@ ul {
     h2 {
         color: var(--color-black);
         @include large-font;
-        margin: 1rem 0;
     }
 
     @include tablet {
@@ -67,7 +70,6 @@ ul {
 
     >p {
         @include base-font;
-        margin: 1rem 0;
         color: var(--color-dark);
     }
 
@@ -81,9 +83,11 @@ ul {
     @include flex-layout(row, center, center);
     @include base-font;
 
+
     img {
         margin: 1rem 2rem;
-        width: 152px;
-        height: 80px;
+        width: 100px;
+        object-fit: cover;
     }
+
 }

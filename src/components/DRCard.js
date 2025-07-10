@@ -23,7 +23,7 @@ const DRCard = ({item, id}) => {
             </div>
             <div className="icon-box">
               <GoBookmark className="bookmark-icon" />
-              <span className="count">925</span>
+              <span className="count">{product.count.toLocaleString()}</span>
             </div>
           </li>
         ))}
