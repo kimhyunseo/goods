@@ -3,7 +3,7 @@ import DRCard from "./DRCard";
 import carditem from "../asset/main-1.json";
 import { useEffect, useState } from "react";
 
-const DailyRecord = () => {
+const DailyPick = () => {
   const [visiableCount, setVisiableCount] = useState(3);
     const [visiableItems,setVisiableItems] = useState([]);
     useEffect(()=>{
@@ -53,4 +53,4 @@ const DailyRecord = () => {
   );
 };
 
-export default DailyRecord;
+export default DailyPick;

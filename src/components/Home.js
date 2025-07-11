@@ -1,5 +1,5 @@
 import Banner from './Banner';
-import DailyRecord from './DailyRecord';
+import DailyRecommend from './DailyRecommend';
 import Review from './Review';
 import Promotion from './Promotion';
 
@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             <Banner/>
-            <DailyRecord/>
+            <DailyRecommend/>
             <Promotion/>
             <Review/>
         </div>
