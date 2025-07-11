@@ -1,6 +1,7 @@
 import { IoMenu } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import "../asset/sub.json";
 
 const ItemPage = () => {
     const [count, setCount] = useState(1);
@@ -10,6 +11,7 @@ const ItemPage = () => {
     const handlePlus = () => {
         setCount(count + 1);
     };
+    useEffect(()=>{},[]);
     return (
         <div>
             <div id="items">
@@ -26,7 +28,7 @@ const ItemPage = () => {
                         <div className="banner">
                             <button className="btn-left">〈</button>
                             <button className="btn-right">〉</button>
-                            <img src="./images/card-1.jpg" />
+                            <img />
                         </div>
 
                         {/* 상점 / 별점  */}
@@ -37,8 +39,8 @@ const ItemPage = () => {
 
                         {/* 상품 이름  */}
                         <div className="item-text">
-                            <h2>{ }데이터 필요</h2>
-                            <p>{ }원</p>
+                            <h2>{}</h2>
+                            <p>{}</p>
                         </div>
 
                         {/* 배송/할인 정보  */}
