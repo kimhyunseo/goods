@@ -1127,7 +1127,8 @@
     "category": "sticker",
     "subtitle": "짱구 야광 스티커 입니다.",
     "isBest": true,
-    "brand": "대원씨아이"
+    "brand": "대원씨아이",
+    "detail" : "/images/sticker-detail.jpg"
   },
   {
     "id": 114,

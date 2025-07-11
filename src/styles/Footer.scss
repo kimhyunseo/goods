@@ -11,12 +11,13 @@ footer {
         &:nth-of-type(2){
             @include bold-font;
         }
+        a{
+            transition: all 0.3s;
+        }
     }
 }
 .top-text>p>a:hover{
     @include bold-font;
-    transition: all 0.3s;
-    border-bottom: 1px solid #222;
 }
 
 .icon {
@@ -90,4 +91,27 @@ ul {
         object-fit: cover;
     }
 
+}
+
+.icon {
+    @include flex-layout(row, center, center);
+    gap: 2rem;
+    &:hover {
+        color: var(--color-primary);
+    }
+    p {
+        background-color: var(--color-gray);
+        @include flex-layout();
+        color: #fff;
+        padding: 0.5rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--color-primary);
+        }
+    }
 }

@@ -37,6 +37,15 @@
       display: none;
     }
   }
+  button.menu-toggle-btn,
+button.search-btn {
+    background-color: transparent;
+    color: var(--color-black);
+    transition: color 0.3s ease;
+    &:hover {
+        color: var(--color-primary);
+    }
+}
 }
 
 // 태블릿
@@ -51,10 +60,14 @@
       .icon-wrap {
         display: block;
         @include flex-layout();
+        
         li {
           font-size: 1.5rem;
           padding: 0 10px;
           cursor: pointer;
+          &:hover {
+        color: var(--color-primary);
+    }
           &:nth-last-of-type(2) {
             position: relative;
 
@@ -100,6 +113,10 @@
           border: 1px solid #ccc;
           font-size: 1rem;
           caret-color: var(--color-primary);
+          &:focus {
+            border-color: var(--color-primary);
+            outline: none;
+          }
         }
         input::placeholder {
           @include bold-font;
@@ -166,11 +183,11 @@
         @include flex-layout(row, space-around);
         border-bottom: 1px solid #eee;
         padding: 1rem 0;
-        li{
+        li {
           font-size: 2rem;
           &:hover {
-          color: var(--color-primary);
-        }
+            color: var(--color-primary);
+          }
         }
       }
       &:nth-child(2) {
@@ -180,12 +197,12 @@
           cursor: pointer;
           border-bottom: 1px solid #eee;
           transition: color 0.2s;
-          &:last-child{
+          &:last-child {
             border: none;
           }
           &:hover {
-          color: var(--color-primary);
-        }
+            color: var(--color-primary);
+          }
         }
       }
     }

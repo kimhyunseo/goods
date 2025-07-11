@@ -1,8 +1,15 @@
 import { BiSolidCoupon } from "react-icons/bi";
 import { IoCartOutline } from "react-icons/io5";
 import { BsCoin } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
-const MypageMobile = () => {
+const MypageMobile = ({setIsLoggedIn } ) => {
+     const navigate = useNavigate();
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    navigate("/");
+    window.scrollTo(0, 0);
+  };
     return (
         <div className="mypagemobile-wrap">
             <div className="member-wrap">
@@ -52,7 +59,7 @@ const MypageMobile = () => {
                     <p className="sub-title">쿠폰</p>
                 </div>
             </div>
-            <button className="logout-btn">로그아웃</button>
+            <button className="logout-btn" onClick={handleLogout}>로그아웃</button>
         </div>
     );
 };

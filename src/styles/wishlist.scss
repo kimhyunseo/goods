@@ -25,21 +25,24 @@
     }
 }
 
-.empty-wish{
-      @include flex-layout(column);
-      height: 500px;
-      gap: 0.5rem;
-      .mark-icon{
+.empty-wish {
+    @include flex-layout(column);
+    height: 500px;
+    gap: 0.5rem;
+    .mark-icon {
         font-size: 5rem;
         color: var(--color-gray);
         margin-bottom: 2rem;
-      }
-      button{
+    }
+    button {
         padding: 1rem 2rem;
         background-color: var(--color-btn);
         color: var(--color-sub);
         @include bold-font;
         border: none;
         border-radius: 0.5rem;
-      }
+        &:hover {
+            filter: brightness(1.2);
+        }
     }
+}

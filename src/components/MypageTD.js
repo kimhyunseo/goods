@@ -1,6 +1,13 @@
 import { IoCartOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
-const MypageTD = () => {
+const MypageTD = ({setIsLoggedIn }) => {
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        setIsLoggedIn (false);
+        navigate("/");
+        window.scrollTo(0, 0);
+    };
     return (
         <div className="mypagetd-wrap">
             <div className="container">
@@ -15,7 +22,9 @@ const MypageTD = () => {
                         <p className="label">회원 등급</p>
                         <div className="grade-wrap">
                             <p className="value">FAMILY</p>
-                            <button className="benefit-btn">등급별 혜택 보기</button>
+                            <button className="benefit-btn">
+                                등급별 혜택 보기
+                            </button>
                         </div>
                     </div>
                     <div className="section">
@@ -88,7 +97,9 @@ const MypageTD = () => {
                     </div>
                 </div>
 
-                <button className="logout-btn">로그아웃</button>
+                <button className="logout-btn" onClick={handleLogout}>
+                    로그아웃
+                </button>
             </div>
         </div>
     );

@@ -62,15 +62,18 @@
     }
     
     .find-wrap {
-      @include flex-layout(row, center, center);
-      gap: 1rem;
-      margin: 1rem 0;
-      p {
-        @include base-font;
-        color: var(--color-dark);
-        cursor: pointer;
-      }
-    }
+            @include flex-layout(row, center, center);
+            gap: 1rem;
+            margin: 1rem 0;
+            p {
+                @include base-font;
+                color: var(--color-dark);
+                cursor: pointer;
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+        }
     
     .join-btn {
       width: 350px;

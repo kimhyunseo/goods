@@ -116,9 +116,18 @@ const Header = ({ onCategorySelect, isLoggedIn }) => {
             onKeyDown={handleKeyDown}
           />
         </div>
-        <button className="search-btn" onClick={handleSearch}>
-          <IoSearchOutline />
-        </button>
+        <button
+                            className="search-btn"
+                            onClick={() => {
+                                if (window.innerWidth >= 412 && window.innerWidth <= 768) {
+                                    navigate("/msearch");
+                                } else {
+                                    handleSearch();
+                                }
+                            }}
+                        >
+                            <IoSearchOutline />
+                        </button>
 
         {/* 우측 아이콘들 */}
         <ul className="icon-wrap">

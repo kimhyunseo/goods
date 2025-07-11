@@ -9,10 +9,10 @@ const ProductCard = ({ product, liked, onToggleLike }) => {
   };
 
   const handleClick = () => {
-  if (product.detail) {
-    navigate(`/product/${product.id}`);
-  }
-};
+    if (product.detail) {
+      navigate(`/product/${product.id}`);
+    }
+  };
 
   return (
     <div className="product-card group">
@@ -26,12 +26,18 @@ const ProductCard = ({ product, liked, onToggleLike }) => {
         {liked ? (
           <MdBookmark
             className="product-card__bookmark-icon"
-            onClick={() => onToggleLike(product)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleLike(product);
+            }}
           />
         ) : (
           <MdOutlineBookmarkBorder
             className="product-card__bookmark-icon"
-            onClick={() => onToggleLike(product)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleLike(product);
+            }}
           />
         )}
       </div>

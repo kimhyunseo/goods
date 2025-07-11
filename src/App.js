@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import MainLayout from "./components/MainLayout";
 import Home from "./components/Home";
@@ -12,6 +12,7 @@ import useWindowSize from "./hooks/useWindowSize";
 import WishList from "./components/WishList";
 import SearchPage from "./components/SearchPage";
 import ItemPage from "./components/ItemPage";
+import Msearch from "./components/Msearch";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -21,16 +22,15 @@ const App = () => {
   const width = useWindowSize();
 
   // 장바구니에 아이템 추가
-  const handleAddCart = (item) => {
+  const handleAddCart = (product, count) => {
     setCart((prev) => {
-      const existing = prev.find((i) => i.id === item.id);
+      const existing = prev.find((item) => item.id === product.id);
       if (existing) {
-        return prev.map((j) =>
-          j.id === item.id ? { ...j, count: j.count + 1 } : j
+        return prev.map((item) =>
+          item.id === product.id ? { ...item, count: item.count + count } : item
         );
-      } else {
-        return [...prev, { ...item, count: 1 }];
       }
+      return [...prev, { ...product, count }];
     });
   };
 
@@ -52,7 +52,7 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/"
@@ -81,12 +81,22 @@ const App = () => {
           />
           <Route
             path="/mypage"
-            element={width <= 768 ? <MypageMobile /> : <MypageTD />}
+            element={
+              width <= 768 ? (
+                <MypageMobile setIsLoggedIn={setIsLoggedIn} />
+              ) : (
+                <MypageTD setIsLoggedIn={setIsLoggedIn} />
+              )
+            }
           />
           <Route
             path="/cart"
             element={
-              <CartPage cart={cart} onCategorySelect={handleCategorySelect} />
+              <CartPage
+                cart={cart}
+                setCart={setCart}
+                onCategorySelect={handleCategorySelect}
+              />
             }
           />
           <Route
@@ -95,12 +105,30 @@ const App = () => {
               <WishList likedItems={likedItems} toggleLike={toggleLike} />
             }
           />
-          <Route path="/product/:id" element={<ItemPage onAddCart={handleAddCart}/>}/>
-          <Route path="/search" element={<SearchPage likedItems={likedItems}
-                toggleLike={toggleLike} onCategorySelect={handleCategorySelect}/>} />
+          <Route
+            path="/product/:id"
+            element={
+              <ItemPage
+                onAddCart={handleAddCart}
+                likedItems={likedItems}
+                toggleLike={toggleLike}
+              />
+            }
+          />
+          <Route
+            path="/search"
+            element={
+              <SearchPage
+                likedItems={likedItems}
+                toggleLike={toggleLike}
+                onCategorySelect={handleCategorySelect}
+              />
+            }
+          />
+          <Route path="/msearch" element={<Msearch />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
