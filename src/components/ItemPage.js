@@ -26,7 +26,7 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
   };
 
   useEffect(() => {
-    fetch("/asset/sub.json")
+    fetch(`${process.env.PUBLIC_URL}/asset/sub.json`)
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((item) => item.id.toString() === id);

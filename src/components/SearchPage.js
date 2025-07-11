@@ -26,7 +26,7 @@ const SearchPage = ({ likedItems = [], toggleLike }) => {
 
   // 상품 데이터 불러오기
   useEffect(() => {
-    fetch("../asset/sub.json")
+    fetch(`${process.env.PUBLIC_URL}/asset/sub.json`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

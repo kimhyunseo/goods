@@ -14,7 +14,7 @@ const DRCard = ({item, id}) => {
         {item.products.map((product) => (
           <li key={product.productID}>
             <div className="sub-img">
-              <img src={`${process.env.PUBLIC_URL}{product.image}`} alt={product.name} />
+              <img src={`${process.env.PUBLIC_URL}${product.image}`} alt={product.name} />
             </div>
             <div className="sub-title">
               <p>{product.brand}</p>

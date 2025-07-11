@@ -5,7 +5,7 @@ export default function CategoryApp({ selectedCategory, likedItems, toggleLike }
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
-    fetch("../asset/sub.json")
+    fetch(`${process.env.PUBLIC_URL}/asset/sub.json`)
       .then((response) => response.json())
       .then((data) => setAllProducts(data));
   }, []);
