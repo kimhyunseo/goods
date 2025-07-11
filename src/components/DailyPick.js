@@ -32,7 +32,7 @@ const DailyPick = () => {
   return (
     <div id="daily-record">
       <div className="title">
-        <h2>Daily Record</h2>
+        <h2>Daily Pick</h2>
         <p>
           더보기
           <IoIosArrowForward />
