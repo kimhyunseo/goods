@@ -22,7 +22,8 @@ const MypageMobile = ({setIsLoggedIn } ) => {
                     <p>쿠폰</p>
                     <p>0</p>
                 </div>
-                <div className="item-wrap">
+                <div className="item-wrap"onClick={() => navigate("/cart")} >
+
                     <IoCartOutline />
                     <p>장바구니</p>
                     <p>0</p>
