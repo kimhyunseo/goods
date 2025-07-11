@@ -4,7 +4,7 @@ const DRCard = ({item, id}) => {
   return (
     <div key={id} className="drcard">
       <div className="main-img">
-        <img src={item.image} />
+        <img src={`${process.env.PUBLIC_URL}${item.image}`} />
       </div>
       <div className="main-title">
         <h3>{item.setTitle}</h3>
@@ -14,7 +14,7 @@ const DRCard = ({item, id}) => {
         {item.products.map((product) => (
           <li key={product.productID}>
             <div className="sub-img">
-              <img src={product.image} alt={product.name} />
+              <img src={`${process.env.PUBLIC_URL}{product.image}`} alt={product.name} />
             </div>
             <div className="sub-title">
               <p>{product.brand}</p>

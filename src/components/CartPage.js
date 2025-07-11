@@ -81,7 +81,7 @@ const CartPage = ({ cart, setCart, onCategorySelect }) => {
                 />
                 <div className="mobile-wrap">
                   <div className="item-thumbnail">
-                    <img src={item.image} alt={item.title} />
+                    <img src={`${process.env.PUBLIC_URL}${item.image}`} alt={item.title} />
                   </div>
                   <div className="item-info">
                     <div className="text-wrap">

@@ -18,7 +18,7 @@ const ProductCard = ({ product, liked, onToggleLike }) => {
     <div className="product-card group">
       <div className="product-card__image-wrapper" onClick={handleClick}>
         <img
-          src={product.image}
+          src={`${process.env.PUBLIC_URL}${product.image}`}
           alt={product.name}
           className="product-card__image"
           onError={handleImageError}

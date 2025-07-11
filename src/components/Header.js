@@ -99,7 +99,7 @@ const Header = ({ onCategorySelect, isLoggedIn }) => {
         <img
           onClick={() => navigate("/")}
           className="logo"
-          src="/images/logo1.png"
+          src={`${process.env.PUBLIC_URL}${/images/logo1.png}`}
           alt="리림 로고"
         />
 

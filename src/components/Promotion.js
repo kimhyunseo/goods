@@ -7,7 +7,7 @@ const PromoMain = React.memo(({ promotionSet }) => (
   <div className="promo-main">
     <div className="main-img-box">
       <img
-        src={promotionSet.setimage}
+        src={`${process.env.PUBLIC_URL}${promotionSet.setimage}`}
         alt={promotionSet.setTitle || promotionSet.brand || "기획전 메인 이미지"}
         className="main-img"
         loading="lazy"
@@ -28,7 +28,7 @@ const ProductCard = React.memo(({ product }) => (
   <div className="product-card">
     <div className="prod-img-wrap">
       <img
-        src={product.image}
+        src={`${process.env.PUBLIC_URL}${product.image}`}
         alt={product.name || product.brand || "상품 이미지"}
         className="prod-img"
         loading="lazy"

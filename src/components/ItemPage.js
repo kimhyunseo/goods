@@ -45,7 +45,7 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
       <div id="items">
         <div className="left">
           <div className="banner-tablet">
-            <img src={product.image} alt={product.name} />
+            <img src={`${process.env.PUBLIC_URL}${product.image}`} alt={product.name} />
           </div>
           <ul className="content-list">
             <li>상품설명</li>
@@ -55,7 +55,7 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
           </ul>
 
           <div className="detail">
-            <img src={product.detail} alt={product.title} />
+            <img src={`${process.env.PUBLIC_URL}${product.detail}`} alt={product.title} />
           </div>
 
           {/* 자주묻는 질문 항목 */}
@@ -172,7 +172,7 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
 
         <div className="right">
           <div className="banner-mobile">
-            <img src={product.image} alt={product.name} />
+            <img src={`${process.env.PUBLIC_URL}${product.image}`} alt={product.name} />
           </div>
           <div className="tablet-layout">
            <div className="text-top">

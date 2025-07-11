@@ -5,47 +5,6 @@ import { IoStar } from "react-icons/io5";
 
 const Review = () => {
   const [visibleCount, setVisibleCount] = useState(4);
-
-  // const reviews = [
-  //   {
-  //     id: 1,
-  //     rating: "★★★★★",
-  //     title: "마음에 들어요",
-  //     content: "포장도 꼼꼼하고 친구도 마음에 든다네요 :)",
-  //     writer: "작가 or 브랜드",
-  //     product: "상품명",
-  //     price: "24,000원",
-  //   },
-  //   {
-  //     id: 2,
-  //     rating: "★★★★★",
-  //     title: "좋아요!",
-  //     content: "배송도 빠르고 퀄리티도 좋아요.",
-  //     writer: "작가 A",
-  //     product: "상품명 A",
-  //     price: "19,000원",
-  //   },
-  //   {
-  //     id: 3,
-  //     rating: "★★★★★",
-  //     title: "굿굿!",
-  //     content: "기대 이상이에요.",
-  //     writer: "작가 B",
-  //     product: "상품명 B",
-  //     price: "22,000원",
-  //   },
-  //   {
-  //     id: 4,
-  //     rating: "★★★★★",
-  //     title: "선물용으로 딱",
-  //     content: "친구가 아주 좋아했어요!",
-  //     writer: "작가 C",
-  //     product: "상품명 C",
-  //     price: "25,000원",
-  //   },
-  //   // 더 많은 리뷰 추가 가능
-  // ];
-
   useEffect(() => {
     const updateCount = () => {
       const width = window.innerWidth;
@@ -79,7 +38,7 @@ const Review = () => {
         {reviews.slice(0, visibleCount).map((review) => (
           <div className="review-list" key={review.setID}>
             <div className="review-main">
-              <img src={review.setimage} alt={review.setTitle} />
+              <img src={`${process.env.PUBLIC_URL}${review.setimage}`} alt={review.setTitle} />
               <div className="review-wrap">
                 <span><IoStar /><IoStar /><IoStar /><IoStar /><IoStar /></span>
               <p className="reviewtxt">{review.setTitle}</p>
@@ -90,7 +49,7 @@ const Review = () => {
             <div className="price">
               {review.products.map((product, idx) => (
                 <a href="#" key={idx}>
-                  <img src={product.image} alt={product.mainTitle} />
+                  <img src={`${process.env.PUBLIC_URL}${product.image}`} alt={product.mainTitle} />
                   <div className="item">
                     <p className="small-text">by {product.brand}</p>
                     <p>{product.mainTitle}</p>

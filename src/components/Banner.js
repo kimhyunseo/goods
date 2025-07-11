@@ -37,7 +37,7 @@ const Banner = () => {
     <div className="banner-wrapper">
       <Slider ref={sliderRef} {...settings}>
         {banners.map((item) => (
-          <img key={item.id} src={item.image} alt={item.name} />
+          <img key={item.id} src={`${process.env.PUBLIC_URL}${item.image}`} alt={item.name} />
         ))}
       </Slider>
 
