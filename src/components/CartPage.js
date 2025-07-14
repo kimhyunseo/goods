@@ -85,9 +85,9 @@ const CartPage = ({ cart, setCart, onCategorySelect }) => {
                   </div>
                   <div className="item-info">
                     <div className="text-wrap">
-                      <p className="brand">Shop</p>
+                      <p className="brand">{item.brand}</p>
                     <p className="name">{item.name}</p>
-                    <p className="option">{item.brand}</p>
+                    <p className="option">{item.subtitle}</p>
                     </div>
                     <div className="quantity">
                       <button onClick={() => changeQuantity(item.id, -1)}>

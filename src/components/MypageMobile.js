@@ -43,7 +43,10 @@ const MypageMobile = ({setIsLoggedIn } ) => {
                     <h4 className="title">PROFILE</h4>
                     <p className="sub-title">회원정보</p>
                 </div>
-                <div className="box">
+                <div className="box"  onClick={() => {
+                            navigate("/wishlist");
+                            window.scrollTo(0, 0);
+                        }}>
                     <h4 className="title">WISHLIST</h4>
                     <p className="sub-title">관심상품</p>
                 </div>
