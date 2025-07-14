@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# 프로젝트 개요
+## 프로젝트이름 :  반응형 웹 쇼핑몰 Ririm
+## 프로젝트 기간 : 2025. 07. 07 ~ 2025. 07. 11
+## 참여인원 : 김현서, 박준형, 정지원, 김율, 표지우
+## 협업 및 작업 방식 : Slack 을 이용하여 실시간 소통하였고, GitHub를 활용하여 코드 버전을 관리하였음.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트 설명
+### 1. 레이아웃
+- **컴포넌트 기반 구조**
+ React를 활용해 Header, Footer, ProductList, ProductCard, Search, Cart, MyPage 등 기능별 컴포넌트를 모듈화했습니다.
+ 각 컴포넌트는 재사용 가능하도록 설계되어 유지 보수가 용이합니다.
+- **Flex & CSS Grid**
+ 콘텐츠 정렬 및 공간 배치는 Flexbox와 Grid를 함께 활용했습니다.
+카드형 상품 리스트: Grid(2~4열)
+- **페이지 구성**
+메인 페이지:  dailypick, 작가기획전, 리뷰
+카테고리 페이지: 카테고리별 상품 리스트 + 필터 기능
+검색 페이지: 검색 결과, 필터 + 페이지네이션
+상세 페이지: 수량 선택, 장바구니 담기
+장바구니 / 위시리스트: 목록 확인 및 수량/삭제 기능
+마이페이지: 주문 현황, 쿠폰/적립금 확인 및 로그아웃 기능
+React Router를 활용해 페이지 전환이 원활하도록 구성했습니다.
 
-## Available Scripts
+### 2. 색상 사용
+- **메인 컬러**
+    **코넬리아 블루 (#6495ED)** 를 적용하여, 브랜드의 차분하고 신뢰감 있는 감성을 전달하고자 하였습니다.
+    안정적인 톤의 블루 계열을 중심으로 시각적 통일감을 부여하며, 주목성과 함께 세련된 이미지를 연출합니다.
+- **서브 컬러**
+    **아이스 블루 (#DCEEF2)** 를 활용하여 메인 컬러와의 조화를 이루면서도 부드러운 대비감을 형성합니다.
+    포인트 요소 및 보조 텍스트 등에 사용되어 전체적인 레이아웃에 균형감을 더합니다.
+- **기본 컬러**
+    **화이트 (#F6F9FF)** / **블랙 (#222222)** / **그레이 계열 3종 (#CCCCCC, #C2C8D2, #666666)** 을 사용하여
+    색상의 수를 최소화하고, 사용자 인터페이스 전반에 걸쳐 가독성과 시각적 피로도 감소를 고려하였습니다.
 
-In the project directory, you can run:
+### 3. UI 디자인 방식
+- 전체 UI 구상은 Figma에서 시작하여, 시안 보기 → 피드백 → 수정 → 최종 확정 과정을 거쳤습니다.
+- **Figma 가이드:**
+    컬러, 폰트, 버튼, 레이아웃 등 디자인 시스템 구성
+    CSS 변수($color-primary, 폰트 mixin 등)로 재사용성 확보
+    UI 구현 시, 픽셀 단위 정밀도를 목표로 CSS, SCSS, styled-component 등으로 스타일을 반영했습니다.
+### 4. 반응형 웹 지원
+- **모바일** : 412px
+    메뉴는 햄버거 토글형 버튼
+    상품 그리드: 2열
+- **태블릿** :1280px
+    전체 레이아웃 센터 정렬
+    상품 그리드: 4열
+- **데스크탑** : 1440px
+    전체 레이아웃 센터 정렬
+    상품 그리드: 열
 
-### `npm start`
+- **미디어 쿼리**
+SCSS의 @mixin tablet, @mixin desktop으로 화면 크기별로 스타일을 적용
+모바일 전용 컴포넌트 (MypageMobile, Msearch 등)와 데스크탑용 (MypageTD)을 조건 렌더링했습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 5. 제작에 사용된 스킬 및 툴
+- **이미지 편집** : Photoshop, Illustrator 
+- **디자인** : Figma
+- **프레임워크** : React
+- **프론트엔드 개발** : React, SCSS
+- **플러그인** : react-slick, slick-carousel, react-icons, SCSS, Web Font, GSAP, AOS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 문제점 및 개선 계획
+### 1. 제작 사이트 문제점
+- 홈 화면 내 더보기 버튼 미구현
+- 검색 기능 내 정렬(최신순/추천순) 미제공
+- 웹 접근성 부족 (alt 태그, 키보드 내비게이션 미지원 등)
+- 마이페이지 환영 문구에 로그인한 사용자 ID 미표시
+- 상품 장바구니 담기 시 기본 alert만 표시됨
+- 사용자 피드백 채널 부재
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 2. 향후 개선 계획
+- 검색 필터 및 정렬 기능 추가
+- 사용자 정보 연동 구현
+- 웹 접근성 향상 (대체 텍스트, 키보드 탐색 등)
+- alert 대신 토스트 알림 등 UI 개선
+- 로딩 상태 및 빈 결과 안내 메시지 처리
+- 모바일 UX 최적화 (터치 영역, 여백 조정 등)
