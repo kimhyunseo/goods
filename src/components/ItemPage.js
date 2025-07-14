@@ -31,8 +31,7 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
       .then((data) => {
         const found = data.find((item) => item.id.toString() === id);
         setProduct(found);
-      });      
-      
+      });
   }, [id]);
 
   if (!product) {
@@ -40,12 +39,14 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
   }
 
   return (
-    
     <div>
       <div id="items">
         <div className="left">
           <div className="banner-tablet">
-            <img src={`${process.env.PUBLIC_URL}${product.image}`} alt={product.name} />
+            <img
+              src={`${process.env.PUBLIC_URL}${product.image}`}
+              alt={product.name}
+            />
           </div>
           <ul className="content-list">
             <li>상품설명</li>
@@ -55,7 +56,10 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
           </ul>
 
           <div className="detail">
-            <img src={`${process.env.PUBLIC_URL}${product.detail}`} alt={product.title} />
+            <img
+              src={`${process.env.PUBLIC_URL}${product.detail}`}
+              alt={product.title}
+            />
           </div>
 
           {/* 자주묻는 질문 항목 */}
@@ -79,9 +83,8 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
                     소요됩니다.
                   </li>
                   <li>
-                    배송지 수정 방법: 결제완료, 상품준비중 단계에서는
-                    마이페이지 → 주문내역 → 더보기 → 정보수정으로 변경
-                    가능합니다.
+                    배송지 수정 방법: 결제완료, 상품준비중 단계에서는 마이페이지
+                    → 주문내역 → 더보기 → 정보수정으로 변경 가능합니다.
                     <br />
                     배송중 단계는 수정이 불가능하며, 문의 채널을 통해 미수령
                     반품 문의 바랍니다.
@@ -141,8 +144,8 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
               {openQna.etc && (
                 <ul className="Qmenu-content">
                   <li>
-                    제품 색감 차이: 모니터(RGB)와 출력물(CMYK) 간 색상 차이
-                    있을 수 있습니다.
+                    제품 색감 차이: 모니터(RGB)와 출력물(CMYK) 간 색상 차이 있을
+                    수 있습니다.
                   </li>
                   <li>
                     계좌 등록 오류 시:
@@ -172,29 +175,32 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
 
         <div className="right">
           <div className="banner-mobile">
-            <img src={`${process.env.PUBLIC_URL}${product.image}`} alt={product.name} />
+            <img
+              src={`${process.env.PUBLIC_URL}${product.image}`}
+              alt={product.name}
+            />
           </div>
           <div className="tablet-layout">
-           <div className="text-top">
-  <p className="color-blk">{product.brand}</p>
-  {isLiked ? (
-    <MdBookmark
-      className="item-bookmark-icon"
-      onClick={(e) => {
-        e.stopPropagation();
-        toggleLike(product);
-      }}
-    />
-  ) : (
-    <MdOutlineBookmarkBorder
-      className="item-bookmark-icon"
-      onClick={(e) => {
-        e.stopPropagation();
-        toggleLike(product);
-      }}
-    />
-  )}
-</div>
+            <div className="text-top">
+              <p className="color-blk">{product.brand}</p>
+              {isLiked ? (
+                <MdBookmark
+                  className="item-bookmark-icon"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleLike(product);
+                  }}
+                />
+              ) : (
+                <MdOutlineBookmarkBorder
+                  className="item-bookmark-icon"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleLike(product);
+                  }}
+                />
+              )}
+            </div>
 
             <div className="item-text">
               <p className="review-text">
@@ -240,12 +246,17 @@ const ItemPage = ({ onAddCart, likedItems, toggleLike }) => {
                   </div>
                 </div>
                 <div>
-                  총금액{" "}
+                  총금액
                   <span>{(product.price * count).toLocaleString()}원</span>
                 </div>
               </div>
               <div className="btn-cart">
-                <button onClick={() => onAddCart(product, count)}>
+                <button
+                  onClick={() => {
+                    onAddCart(product, count);
+                    alert("상품이 장바구니에 담겼습니다.");
+                  }}
+                >
                   장바구니 담기
                 </button>
                 <button>구매하기</button>

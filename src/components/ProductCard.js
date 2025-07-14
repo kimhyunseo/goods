@@ -11,6 +11,7 @@ const ProductCard = ({ product, liked, onToggleLike }) => {
   const handleClick = () => {
     if (product.detail) {
       navigate(`/product/${product.id}`);
+      window.scrollTo(0, 0);
     }
   };
 
